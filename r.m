@@ -15,6 +15,22 @@ endfunction
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function m = puntofalso(f, a, b, t)
   m1 = (a*f(b) - b*f(a)) / (f(b) - f(a));
   fprintf('m = %.6f\n', m1);
@@ -33,6 +49,19 @@ endfunction
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 function m = newton(x,g,t)
   x1=g(x)
   fprintf('m = %.6f\n',x1);
@@ -43,6 +72,13 @@ function m = newton(x,g,t)
   endwhile
   m=x1;
 endfunction
+
+
+
+
+
+
+
 
 
 
@@ -65,6 +101,14 @@ endfunction
 
 
 
+
+
+
+
+
+
+
+
 function inversa1=inversa_matriz(a)
   n=size(a,1);
   ext=eye(n);
@@ -79,6 +123,13 @@ function inversa1=inversa_matriz(a)
   endfor
   inversa1=a(:,n+1:end)
 endfunction
+
+
+
+
+
+
+
 
 
 function inversa1=inversa_matriz(a,amplia)
@@ -98,6 +149,18 @@ function inversa1=inversa_matriz(a,amplia)
 endfunction
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 function [u, j] = halla(a, b, n)
     for i = 1:n-1
         for j = i+1:n
@@ -112,6 +175,18 @@ function [u, j] = halla(a, b, n)
     u = a;
     j = b;
 endfunction
+
+
+
+
+
+
+
+
+
+
+
+
 
 function x=Rtri(A,b)
   n=size(A,1);
