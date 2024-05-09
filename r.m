@@ -113,7 +113,7 @@ function [u, j] = halla(a, b, n)
     j = b;
 endfunction
 
-unction x=Rtri(A,b)
+function x=Rtri(A,b)
   n=size(A,1);
   x=zeros(n,1);
   x(n)=b(n)/A(n,n);
