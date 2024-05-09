@@ -15,7 +15,6 @@ endfunction
 
 
 
-
 function m = puntofalso(f, a, b, t)
   m1 = (a*f(b) - b*f(a)) / (f(b) - f(a));
   fprintf('m = %.6f\n', m1);
@@ -81,3 +80,35 @@ function inversa1=inversa_matriz(a)
   inversa1=a(:,n+1:end)
 endfunction
 
+
+function inversa1=inversa_matriz(a,amplia)
+  n=size(a,1);
+  ext=amplia;
+  a=[a,ext];
+  for i=1:n
+    a(i,:)= a(i,:)/a(i,i);
+    for j=1:n
+       if i~=j
+        a(j,:) = a(j,:) - a(i,:)*a(j,i);
+       endif
+    endfor
+  endfor
+
+  inversa1=a;
+endfunction
+
+
+function [u, j] = halla(a, b, n)
+    for i = 1:n-1
+        for j = i+1:n
+            m = a(j,i) / a(i,i);
+            a(j,i) = 0;
+            for k = i+1:n
+                a(j,k) = a(j,k) - m * a(i,k);
+            endfor
+            b(j) = b(j) - m * b(i);
+        endfor
+    endfor
+    u = a;
+    j = b;
+endfunction
